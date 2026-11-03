@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f9f7">
+  <meta name="description" content="稼働時間と休憩時間を自由に設定できる、シンプルなインターバルタイマーです。">
+  <title>タイムインターバル君 | トワノソラ</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./timer.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <a href="../" class="back-link">← トワノソラ</a>
+      <h1>タイムインターバル君</h1>
+      <p>自分のリズムで、動いて休もう。</p>
+    </header>
+
+    <section class="timer-panel" aria-label="タイマー">
+      <div class="phase-label" id="phase-label">準備OK</div>
+      <div class="time-display" id="time-display" role="timer">00:30</div>
+      <p class="next-phase" id="next-phase">スタートを押してください</p>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+
+      <div class="controls">
+        <button type="button" class="primary-button" id="start-pause">
+          スタート
+        </button>
+        <button type="button" class="secondary-button" id="reset">
+          リセット
+        </button>
+      </div>
+    </section>
+
+    <section class="settings-panel" aria-labelledby="settings-title">
+      <h2 id="settings-title">タイマー設定</h2>
+
+      <div class="setting-grid">
+        <label class="setting-field">
+          <span>稼働時間（秒）</span>
+          <input type="number" id="work-time" min="1" max="3600" value="30">
+        </label>
+
+        <label class="setting-field">
+          <span>休憩時間（秒）</span>
+          <input type="number" id="rest-time" min="1" max="3600" value="10">
+        </label>
+      </div>
+
+      <p class="settings-note">
+        設定を変更するとタイマーはリセットされます。
+      </p>
+    </section>
+
+    <footer class="app-footer">
+      <p>© TOWANOSORA</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="トワノソラは、日々の暮らしに役立つシンプルなWebツールを公開する個人開発サイトです。">
+  <title>トワノソラ | 作成ツールまとめサイト </title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+  <div class="desktop">
+    <div class="explorer-window">
+
+      <header class="title-bar">
+        <div class="title-bar-name">
+          <span aria-hidden="true">☁️</span>
+          <span>トワノソラ - 作成ツールまとめ </span>
+        </div>
+        <div class="window-controls" aria-label="ウィンドウ操作">
+          <button type="button" id="minimize-button" aria-label="最小化">_</button>
+          <button type="button" id="maximize-button" aria-label="最大化">□</button>
+          <button type="button" id="close-button" aria-label="閉じる">×</button>
+        </div>
+      </header>
+
+      <nav class="menu-bar" aria-label="メニューバー">
+        <button type="button" data-menu="file">ファイル(F)</button>
+        <button type="button" data-menu="view">表示(V)</button>
+        <a href="#tools">お気に入り(A)</a>
+        <a href="#about">ヘルプ(H)</a>
+      </nav>
+
+      <div class="address-bar">
+        <label for="address-input">アドレス(D)</label>
+        <span class="address-icon" aria-hidden="true">🌐</span>
+        <input
+          id="address-input"
+          type="text"
+          value="https://soratowano.pages.dev/"
+          readonly
+          aria-label="サイトのアドレス"
+        >
+        <button type="button" id="go-button">移動 ➜</button>
+      </div>
+
+      <div class="workspace">
+
+        <aside class="sidebar" aria-label="サイト内メニュー">
+          <div class="sidebar-title">
+            <strong>メニュー</strong>
+            <span aria-hidden="true">×</span>
+          </div>
+
+          <nav class="sidebar-links">
+            <a class="nav-link active" href="#home" data-section="home">
+              <span aria-hidden="true">🏠</span> ホーム
+            </a>
+            <a class="nav-link" href="#tools" data-section="tools">
+              <span aria-hidden="true">📁</span> ツール一覧
+            </a>
+            <a class="nav-link" href="#about" data-section="about">
+              <span aria-hidden="true">📄</span> トワノソラについて
+            </a>
+            <a class="nav-link" href="#news" data-section="news">
+              <span aria-hidden="true">📝</span> お知らせ
+            </a>
+            <a class="nav-link" href="#contact" data-section="contact">
+              <span aria-hidden="true">✉️</span> お問い合わせ
+            </a>
+          </nav>
+        </aside>
+
+        <main class="main-content" id="home">
+
+          <section class="hero">
+            <div class="hero-title">
+              <span class="hero-icon" aria-hidden="true">☁️</span>
+              <div>
+                <h1>トワノソラ</h1>
+                <p>暮らしに、ちょっとの便利</p>
+              </div>
+            </div>
+            <div class="hero-aside">
+              SMALL TOOLS<br>
+              FOR EVERYDAY LIFE.
+            </div>
+          </section>
+
+          <section class="retro-window" id="about">
+            <div class="panel-title">
+              <span>🖥️ トワノソラについて</span>
+              <span class="panel-decoration" aria-hidden="true">×</span>
+            </div>
+            <div class="about-content">
+              <div class="computer-art" aria-hidden="true">🖥️</div>
+              <div class="about-text">
+                <p>
+                  トワノソラは、日々の中で
+                  「あったら便利だな」と思うものを形にする、
+                  個人開発のWebツールサイトです。
+                </p>
+                <p>
+                  難しい操作をなるべく減らして、誰でも気軽に
+                  使えるものづくりを目指しています。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section class="retro-window" id="tools">
+            <div class="panel-title">
+              <span>📁 ツール一覧</span>
+              <span class="panel-decoration" aria-hidden="true">×</span>
+            </div>
+
+            <div class="tools-grid">
+              <article class="tool-card">
+                <div class="tool-icon" aria-hidden="true">🛒</div>
+                <div class="tool-details">
+                  <div class="tool-heading">
+                    <h2>礼司 <small>Reggie</small></h2>
+                    <span class="status status-live">公開中</span>
+                  </div>
+                  <p>
+                    買い物中の合計金額や予算を、
+                    スマホで手軽に確認できるWebアプリ。
+                  </p>
+                  <a
+                    class="retro-button"
+                    href="https://reggieapp.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    使ってみる ➜
+                  </a>
+                </div>
+              </article>
+
+              <article class="tool-card">
+                <div class="tool-icon" aria-hidden="true">⏱️</div>
+                <div class="tool-details">
+                  <div class="tool-heading">
+                    <h2>インターバルタイマー</h2>
+                    <span class="status status-planned">制作予定</span>
+                  </div>
+                  <p>
+                    運動も休憩も、自分のペースで。
+                    時間とアラームを自由に設定できるタイマー。
+                  </p>
+                  <button class="retro-button" type="button" disabled>
+                    Coming Soon...
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="retro-window compact-window" id="news">
+            <div class="panel-title">
+              <span>📝 お知らせ</span>
+              <span class="panel-decoration" aria-hidden="true">×</span>
+            </div>
+            <div class="panel-content">
+              <p>トワノソラのホームページを準備中です。</p>
+            </div>
+          </section>
+
+          <section class="retro-window compact-window" id="contact">
+            <div class="panel-title">
+              <span>✉️ お問い合わせ</span>
+              <span class="panel-decoration" aria-hidden="true">×</span>
+            </div>
+            <div class="panel-content">
+              <p>
+                ご意見・ご要望、不具合の報告などを受け付ける
+                窓口はX(旧twitter)になります
+              </p>
+              <p class="muted">お問い合わせ窓口は準備中です。</p>
+            </div>
+          </section>
+
+        </main>
+      </div>
+
+      <div class="status-bar">
+        <span>トワノソラへようこそ</span>
+        <span>2 個のツール</span>
+      </div>
+
+    </div>
+
+    <footer class="taskbar">
+      <div class="start-area">
+        <button
+          class="start-button"
+          type="button"
+          id="start-button"
+          aria-expanded="false"
+          aria-controls="start-menu"
+        >
+          <span aria-hidden="true">🪟</span> スタート
+        </button>
+        <div class="start-menu" id="start-menu" hidden>
+          <div class="start-menu-heading">トワノソラ</div>
+          <a href="#home">🏠 ホーム</a>
+          <a href="#tools">📁 ツール一覧</a>
+          <a href="#contact">✉️ お問い合わせ</a>
+          <div class="start-menu-divider"></div>
+          <button type="button" id="start-about">ℹ️ このサイトについて</button>
+        </div>
+      </div>
+
+      <button class="taskbar-app" type="button" id="restore-button">
+        ☁️ トワノソラ
+      </button>
+
+      <div class="taskbar-spacer"></div>
+
+      <div class="system-tray">
+        <span aria-hidden="true">🔊</span>
+        <time id="taskbar-clock">--:--</time>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>

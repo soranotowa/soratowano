@@ -1,14 +1,31 @@
 
+/* ======================================
+   インターバルる | トワノソラ
+   共通設定・カラー
+====================================== */
+
 :root {
   --bg: #f7f9f7;
   --surface: #ffffff;
   --text: #29352e;
   --muted: #758079;
+
   --primary: #4b8b6c;
   --primary-dark: #387454;
+
   --border: #e5ece6;
   --track: #e8eee9;
+
+  --settings-bg: #e5f1f0;
+  --settings-border: #c7ddda;
+
+  --focus-color: #9bc7ab;
 }
+
+
+/* ======================================
+   基本スタイル
+====================================== */
 
 * {
   box-sizing: border-box;
@@ -18,12 +35,18 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont,
-    "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Meiryo",
+    sans-serif;
   line-height: 1.6;
 }
 
-button, input {
+button,
+input,
+select {
   font: inherit;
 }
 
@@ -31,29 +54,42 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
+}
+
+
+/* ======================================
+   ページ全体
+====================================== */
+
 .app {
   width: min(100% - 32px, 520px);
   margin: 0 auto;
 }
+
+
+/* ======================================
+   ヘッダー
+====================================== */
 
 .app-header {
   padding: 28px 0 22px;
   text-align: center;
 }
 
-.back-link {
-  display: block;
-  margin-bottom: 24px;
-  text-align: left;
-  color: var(--muted);
-  font-size: 13px;
-  text-decoration: none;
-}
-
 .app-header h1 {
   margin: 0;
   font-size: 23px;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 
 .app-header p {
@@ -61,23 +97,43 @@ button {
   font-size: 13px;
 }
 
+.title-emoji {
+  display: inline-block;
+  margin: 0 6px;
+}
+
+
+/* ======================================
+   共通カード
+====================================== */
+
 .timer-panel,
 .settings-panel {
-  background: var(--surface);
+  margin-bottom: 18px;
+  padding: 30px 24px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  padding: 30px 24px;
-  margin-bottom: 18px;
 }
 
 .timer-panel {
+  background: var(--surface);
   text-align: center;
 }
 
+.settings-panel {
+  background: var(--settings-bg);
+  border-color: var(--settings-border);
+}
+
+
+/* ======================================
+   タイマー表示
+====================================== */
+
 .phase-label {
   color: var(--primary);
-  font-weight: 700;
   font-size: 16px;
+  font-weight: 700;
 }
 
 .time-display {
@@ -85,15 +141,20 @@ button {
   font-size: clamp(64px, 13vw, 90px);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
   line-height: 1.3;
 }
 
 .next-phase {
+  margin: 7px 0 26px;
   color: var(--muted);
   font-size: 13px;
-  margin: 7px 0 26px;
 }
+
+
+/* ======================================
+   進捗バー
+====================================== */
 
 .progress-track {
   height: 8px;
@@ -106,8 +167,13 @@ button {
   width: 0%;
   height: 100%;
   background: var(--primary);
-  transition: width .1s linear;
+  transition: width 0.1s linear;
 }
+
+
+/* ======================================
+   タイマー操作ボタン
+====================================== */
 
 .controls {
   display: grid;
@@ -118,14 +184,14 @@ button {
 
 .controls button {
   min-height: 54px;
-  border-radius: 12px;
   border: none;
+  border-radius: 12px;
   font-weight: 700;
 }
 
 .primary-button {
   background: var(--primary);
-  color: white;
+  color: #ffffff;
 }
 
 .primary-button:hover {
@@ -137,10 +203,34 @@ button {
   color: var(--text);
 }
 
+
+/* ======================================
+   設定カード・見出し
+====================================== */
+
+
 .settings-panel h2 {
-  font-size: 17px;
   margin: 0 0 20px;
+  font-size: 17px;
+  text-align: center;
 }
+
+.settings-panel h3 {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.setting-divider {
+  height: 1px;
+  margin: 24px 0;
+  background: var(--settings-border);
+}
+
+
+/* ======================================
+   設定入力欄
+====================================== */
 
 .setting-grid {
   display: grid;
@@ -156,23 +246,130 @@ button {
   font-weight: 600;
 }
 
-.setting-field input {
+.setting-field input,
+.setting-field select {
   width: 100%;
   min-height: 46px;
   padding: 8px 12px;
-  border: 1px solid #cfdad1;
+  border: 1px solid #b6cfca;
   border-radius: 10px;
-  background: white;
+  background: #ffffff;
   color: var(--text);
+}
+
+.setting-field input {
+  border-color: #cfdad1;
   font-size: 18px;
 }
 
-.setting-field input:focus-visible,
-button:focus-visible,
-a:focus-visible {
-  outline: 3px solid #9bc7ab;
-  outline-offset: 3px;
+.setting-field select {
+  font-size: 15px;
 }
+
+
+/* ======================================
+   アラーム音の選択・試聴
+====================================== */
+
+.alarm-setting {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.alarm-setting .setting-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.preview-button {
+  min-height: 46px;
+  padding: 8px 14px;
+  border: 1px solid var(--settings-border);
+  border-radius: 10px;
+  background: #ffffff;
+  color: var(--primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.preview-button:hover {
+  background: #f4faf8;
+}
+
+
+/* ======================================
+   毎秒の音 ON / OFF
+====================================== */
+
+.toggle-setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.toggle-setting span {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.toggle-setting strong {
+  font-size: 14px;
+}
+
+.toggle-setting small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.toggle-setting input {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+
+/* ======================================
+   アラーム音量
+====================================== */
+
+.volume-setting {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.volume-setting label {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.volume-setting input {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
+.volume-setting output {
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ======================================
+   補足説明
+====================================== */
 
 .settings-note {
   margin: 15px 0 0;
@@ -180,12 +377,35 @@ a:focus-visible {
   font-size: 12px;
 }
 
+
+/* ======================================
+   フッター
+====================================== */
+
 .app-footer {
   padding: 12px 0 30px;
   color: var(--muted);
   text-align: center;
   font-size: 11px;
 }
+
+.footer-link {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ======================================
+   スマートフォン
+====================================== */
 
 @media (max-width: 380px) {
   .timer-panel,
@@ -196,4 +416,34 @@ a:focus-visible {
   .setting-grid {
     gap: 10px;
   }
+
+  .title-emoji {
+    margin: 0 2px;
+  }
+
+  .preview-button {
+    padding: 8px 10px;
+  }
+
+  .toggle-setting {
+    gap: 8px;
+  }
+}
+
+
+/* ======================================
+   動きを減らす設定への対応
+====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill {
+    transition: none;
+  }
+}
+
+
+/* 設定カードの背景色 */
+.settings-panel {
+  background-color: #e5f1f0;
+  border-color: #c7ddda;
 }

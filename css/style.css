@@ -801,3 +801,64 @@ a {
     scroll-behavior: auto;
   }
 }
+
+/* カウンタ設定 */
+
+
+
+/* ======================================
+   懐かしのアクセスカウンター
+====================================== */
+
+.visitor-counter {
+  padding: 14px;
+  text-align: center;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+}
+
+.visitor-counter-inner {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #ffffff #777777 #777777 #ffffff;
+  box-shadow: 1px 1px 0 #555555;
+}
+
+.counter-heading {
+  display: block;
+  margin-bottom: 8px;
+  font-family: monospace;
+  color: #000080;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.visitor-counter p {
+  margin: 5px 0;
+  color: #222222;
+  font-size: 12px;
+}
+
+.counter-digits {
+  display: inline-block;
+  padding: 5px 9px;
+  background: #101010;
+  border: 3px inset #777777;
+  color: #72ff83;
+  font-family: "Courier New", monospace;
+  font-size: clamp(22px, 5vw, 30px);
+  font-weight: bold;
+  letter-spacing: 5px;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 5px #2f9c48;
+}
+
+.counter-since {
+  display: block;
+  margin-top: 8px;
+  color: #555555;
+  font-family: monospace;
+  font-size: 11px;
+}

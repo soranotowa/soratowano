@@ -8,6 +8,7 @@
   <title>トワノソラ | 作成ツールまとめサイト </title>
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/main.js" defer></script>
+  <script src="./js/counter.js" defer></script>
 </head>
 <body>
 
@@ -150,9 +151,9 @@
                     運動も休憩も、自分のペースで。
                     時間とアラームを自由に設定できるタイマー。
                   </p>
-                  <button class="retro-button" type="button" disabled>
-                    Coming Soon...
-                  </button>
+                <a class="retro-button" href="./timer/">
+                  使ってみる ➜
+                </a>
                 </div>
               </article>
             </div>
@@ -178,13 +179,42 @@
                 ご意見・ご要望、不具合の報告などを受け付ける
                 窓口はX(旧twitter)になります
               </p>
-              <p class="muted">お問い合わせ窓口は準備中です。</p>
+
+              <a
+                class="retro-button"
+                href="https://x.com/towanosora_my"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Xでお問い合わせ ➜
+              </a>
+
             </div>
           </section>
 
         </main>
       </div>
+      <section class="visitor-counter" aria-label="アクセスカウンター">
+        <div class="visitor-counter-inner">
+          <span class="counter-heading">
+            ★ Welcome to TOWANOSORA ★
+          </span>
 
+          <p>あなたは</p>
+
+          <div
+            class="counter-digits"
+            id="visitor-count"
+            aria-label="アクセス数 読み込み中"
+          >
+            -------
+          </div>
+
+          <p>番目のアクセスです！</p>
+
+          <span class="counter-since">Since 2026</span>
+        </div>
+      </section>
       <div class="status-bar">
         <span>トワノソラへようこそ</span>
         <span>2 個のツール</span>

@@ -646,45 +646,118 @@ a {
   display: none;
 }
 
-/* スマートフォン */
+/* ======================================
+   アクセスカウンター
+   サイドバー上部に配置
+====================================== */
 
+/* カウンター全体 */
+.sidebar .visitor-counter {
+  order: 1;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 12px;
+  background: transparent;
+  border-top: 0;
+  text-align: center;
+}
+
+/* 青いタイトルバーを一番上に */
+.sidebar .sidebar-title {
+  order: 0;
+}
+
+/* メニュー一覧をカウンターの下に */
+.sidebar .sidebar-links {
+  order: 2;
+}
+
+/* カウンターの外枠 */
+.visitor-counter-inner {
+  display: block;
+  width: 100%;
+  padding: 12px 6px;
+  background: #d4d0c8;
+  border: 2px solid;
+  border-color: #ffffff #777777 #777777 #ffffff;
+  box-shadow: 1px 1px 0 #555555;
+  text-align: center;
+}
+
+/* 説明文 */
+.visitor-counter p {
+  margin: 5px 0;
+  color: #222222;
+  font-size: 12px;
+}
+
+/* アクセス数の数字 */
+.counter-digits {
+  display: inline-block;
+  max-width: 100%;
+  padding: 5px 4px;
+  background: #101010;
+  border: 3px inset #777777;
+  color: #72ff83;
+  font-family: "Courier New", monospace;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-shadow: 0 0 5px #2f9c48;
+}
+
+/* Since 2026 */
+.counter-since {
+  display: block;
+  margin-top: 8px;
+  color: #555555;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+/* ======================================
+   スマホ専用 折りたたみメニュー
+====================================== */
+
+/* PCでは非表示 */
+.mobile-menu {
+  display: none;
+}
+
+/* ======================================
+   スマホ表示（800px以下）
+====================================== */
 @media (max-width: 800px) {
   .desktop {
     padding: 5px 5px 55px;
   }
 
+  /* 親ページの見出し → メニュー → コンテンツの順 */
   .workspace {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-content {
+    display: contents;
+  }
+
+  .hero {
+    order: 1;
+    padding: 25px 15px;
+    min-height: 150px;
   }
 
   .sidebar {
+    order: 2;
     border-right: 0;
     border-bottom: 3px solid #777;
   }
 
-  .sidebar-links {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px;
-    padding: 8px;
-  }
-
-  .nav-link {
-    padding: 5px 8px;
-    font-size: 12px;
-  }
-
-  .nav-link span {
-    font-size: 18px;
-  }
-
-  .main-content {
-    padding: 8px;
-  }
-
-  .hero {
-    padding: 25px 15px;
-    min-height: 150px;
+  .retro-window {
+    order: 3;
   }
 
   .hero-icon {
@@ -711,6 +784,77 @@ a {
 
   .about-text p {
     font-size: 13px;
+  }
+
+  /* スマホではPC用メニューを非表示 */
+  .sidebar .sidebar-title,
+  .sidebar .sidebar-links {
+    display: none;
+  }
+
+  /* 折りたたみメニュー */
+  .sidebar .mobile-menu {
+    display: block;
+    order: 0;
+    width: 100%;
+    background: #d4d0c8;
+  }
+
+  .mobile-menu summary {
+    position: relative;
+    padding: 12px 38px 12px 16px;
+    background: linear-gradient(90deg, #000080, #0756b9);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu summary::after {
+    content: "▼";
+    position: absolute;
+    right: 16px;
+  }
+
+  .mobile-menu[open] summary::after {
+    content: "▲";
+  }
+
+  .mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px;
+  }
+
+  .mobile-menu-links a {
+    display: block;
+    padding: 11px 12px;
+    color: #111;
+    background: #eeeeee;
+    border: 1px solid #aaa;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .mobile-menu-links a:hover,
+  .mobile-menu-links a:focus-visible {
+    background: #0756b9;
+    color: #ffffff;
+  }
+
+  /* カウンターはメニューの下 */
+  .sidebar .visitor-counter {
+    margin: 8px 0;
+  }
+
+  .visitor-counter-inner {
+    max-width: 280px;
+    margin: 0 auto;
   }
 }
 
@@ -801,89 +945,5 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-}
-
-
-/* ======================================
-   アクセスカウンター
-   サイドバー上部に配置
-====================================== */
-
-/* カウンター全体 */
-.sidebar .visitor-counter {
-  order: 1;
-  width: 100%;
-  margin: 0 0 8px;
-  padding: 12px;
-  background: transparent;
-  border-top: 0;
-  text-align: center;
-}
-
-/* 青いタイトルバーを一番上に */
-.sidebar .sidebar-title {
-  order: 0;
-}
-
-/* メニュー一覧をカウンターの下に */
-.sidebar .sidebar-links {
-  order: 2;
-}
-
-/* カウンターの外枠 */
-.visitor-counter-inner {
-  display: block;
-  width: 100%;
-  padding: 12px 6px;
-  background: #d4d0c8;
-  border: 2px solid;
-  border-color: #ffffff #777777 #777777 #ffffff;
-  box-shadow: 1px 1px 0 #555555;
-  text-align: center;
-}
-
-/* 説明文 */
-.visitor-counter p {
-  margin: 5px 0;
-  color: #222222;
-  font-size: 12px;
-}
-
-/* アクセス数の数字 */
-.counter-digits {
-  display: inline-block;
-  max-width: 100%;
-  padding: 5px 4px;
-  background: #101010;
-  border: 3px inset #777777;
-  color: #72ff83;
-  font-family: "Courier New", monospace;
-  font-size: 22px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-  text-shadow: 0 0 5px #2f9c48;
-}
-
-/* Since 2026 */
-.counter-since {
-  display: block;
-  margin-top: 8px;
-  color: #555555;
-  font-family: monospace;
-  font-size: 11px;
-}
-
-/* スマホ表示 */
-@media (max-width: 800px) {
-  .sidebar .visitor-counter {
-    margin-bottom: 8px;
-  }
-
-  .visitor-counter-inner {
-    max-width: 280px;
-    margin: 0 auto;
   }
 }

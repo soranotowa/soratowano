@@ -87,3 +87,80 @@ h3 { margin: 0; font-size: 18px; }
   color: #111111;
   font-size: 12px;
 }
+
+/* ======================================
+   過去の活動
+====================================== */
+
+.past-activities {
+  margin: 28px 0;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #d8e2ef;
+  border-radius: 14px;
+}
+
+.past-activities h2 {
+  margin: 0 0 18px;
+  color: #111111;
+  font-size: 19px;
+}
+
+.past-activity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.past-activity-icon {
+  flex-shrink: 0;
+  padding: 12px;
+  background: #eaf1fb;
+  border-radius: 10px;
+  font-size: 28px;
+}
+
+.past-activity-content {
+  min-width: 0;
+}
+
+.past-activity-content h3 {
+  margin: 0 0 6px;
+  color: #222222;
+  font-size: 16px;
+}
+
+.past-activity-content p {
+  margin: 0 0 12px;
+  color: #555555;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.past-activity-content a {
+  color: #2765b2;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.past-activity-content a:hover {
+  text-decoration: underline;
+}
+
+/* スマホ表示 */
+@media (max-width: 520px) {
+  .past-activities {
+    padding: 16px;
+  }
+
+  .past-activity-card {
+    gap: 12px;
+  }
+
+  .past-activity-icon {
+    padding: 8px;
+    font-size: 24px;
+  }
+}
+    

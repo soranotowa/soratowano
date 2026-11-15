@@ -10,18 +10,39 @@
   <title>インターばるん | トワノソラ</title>
 
   <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/png" href="./favicon.png">
   <script src="./timer.js" defer></script>
 </head>
 <body>
   <main class="app">
 
+
     <header class="app-header">
-      <h1>
-        <span class="title-emoji" aria-hidden="true">🚴</span>
-        インターばるん
-        <span class="title-emoji" aria-hidden="true">🏃</span>
-      </h1>
+      <div class="window-bar">
+
+        <div class="window-title">
+          <img
+            src="./favicon.png"
+            alt=""
+            class="window-icon"
+            aria-hidden="true"
+          >
+        </div>
+
+        <h1 class="window-main-title">
+          インターバルタイマーのインターばるん
+        </h1>
+
+        <img
+          src="../images/hero_cloud.png"
+          alt=""
+          class="window-cloud"
+          aria-hidden="true"
+        >
+
+      </div>
     </header>
+
 
     <section class="timer-panel" aria-label="タイマー">
       <div class="phase-label" id="phase-label">準備OK</div>
@@ -49,7 +70,7 @@
     </section>
 
     <section class="settings-panel" aria-labelledby="settings-title">
-      <h2 id="settings-title">⚙️ 設定 ⚙️</h2>
+      <h2 id="settings-title">⚙️ タイマー設定 ⚙️</h2>
 
       <div class="setting-grid">
         <label class="setting-field">
@@ -142,7 +163,7 @@
       <a href="../" class="footer-link">
         トワノソラのホームページ
       </a>
-      <p>© TOWANOSORA</p>
+    <small>© 2026 トワノソラ. All rights reserved.</small>
     </footer>
 
   </main>

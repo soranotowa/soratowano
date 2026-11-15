@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="トワノソラのWebツール開発メモ。更新履歴や今後の課題をツールごとにまとめています。">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>開発メモ | トワノソラ</title>
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./data.js" defer></script>
+  <script src="./devlog.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <a class="home-link" href="../">← トワノソラのホームページへ</a>
+      <p class="eyebrow">TOWANOSORA / DEVELOPMENT LOG</p>
+      <h1>📓 開発メモ</h1>
+      <p class="intro">ツールの更新記録と、これから取り組みたいこと。気になるものだけ、のぞいてみてください。</p>
+    </header>
+    <main>
+      <section class="directory" aria-labelledby="directory-title">
+        <div class="section-title">
+          <h2 id="directory-title">ツールを探す</h2>
+          <span id="project-count" class="count"></span>
+        </div>
+        <label class="search-label" for="project-search">名前で検索</label>
+        <input id="project-search" type="search" placeholder="ツール名で検索…" autocomplete="off">
+        <nav id="project-list" class="project-list" aria-label="開発メモのツール一覧"></nav>
+        <p id="empty-message" class="empty-message" hidden>該当するツールがありません。</p>
+      </section>
+      <section class="entries" aria-labelledby="entries-title">
+        <h2 id="entries-title">ツール別の開発記録</h2>
+        <div id="project-entries" class="project-entries"></div>
+      </section>
+      <noscript><p>開発メモを表示するにはJavaScriptを有効にしてください。</p></noscript>
+    </main>
+    <footer class="footer"><a href="../">← トワノソラのホームページへ</a><small>© 2026 トワノソラ. All rights reserved.</small></footer>
+  </div>
+</body>
+</html>

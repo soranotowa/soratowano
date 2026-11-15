@@ -957,3 +957,13 @@ a {
     scroll-behavior: auto;
   }
 }
+
+/* コピーライト */
+.site-copyright {
+  max-width: 1500px;
+  margin: 16px auto 0;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+}

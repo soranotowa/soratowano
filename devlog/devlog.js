@@ -46,15 +46,16 @@
     heading.append(el("small", "", p.status || ""));
     summary.append(heading);
     details.append(summary);
+
     const body = el("div", "project-body");
-    if (p.description) body.append(el("p", "project-description", p.description));
+    if (p.description) {
+      body.append(el("p", "project-description", p.description));
+    }
     if (p.url) {
       const link = el("a", "app-link", "ツールを開く ↗");
       link.href = p.url;
-      if (/^https?:\/\//.test(p.url)) {
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-      }
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
       body.append(link);
     } else {
       body.append(el("p", "no-data", "ツールは公開準備中です。"));

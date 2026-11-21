@@ -57,7 +57,7 @@
       link.target = "_blank";
       link.rel = "noopener noreferrer";
       body.append(link);
-    } else {
+    } else if (p.status !== "新規受付終了") {
       body.append(el("p", "no-data", "ツールは公開準備中です。"));
     }
     body.append(el("h3", "block-title", "今後の課題"));

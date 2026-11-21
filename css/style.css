@@ -474,6 +474,11 @@ a {
   background: #dedede;
 }
 
+.status-ended {
+  color: #666;
+  background: #e9e9e9;
+}
+
 .retro-button {
   display: inline-block;
   min-width: 135px;
